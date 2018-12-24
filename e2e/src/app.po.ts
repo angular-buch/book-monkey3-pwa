@@ -1,11 +1,11 @@
-import { browser, element, by } from 'protractor';
+import { browser, by, element } from 'protractor';
 
-export class BookMonkeyPage {
+export class AppPage {
   navigateTo() {
     return browser.get('/');
   }
 
-  getHeaderText() {
-    return element(by.css('h1')).getText();
+  getTitleText() {
+    return element(by.css('bm-root h1')).getText();
   }
 }

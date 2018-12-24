@@ -1,14 +1,14 @@
-import { BookMonkeyPage } from './app.po';
+import { AppPage } from './app.po';
 
-describe('book-monkey App', function() {
-  let page: BookMonkeyPage;
+describe('workspace-project App', () => {
+  let page: AppPage;
 
   beforeEach(() => {
-    page = new BookMonkeyPage();
+    page = new AppPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getHeaderText()).toBe('Home');
+    expect(page.getTitleText()).toEqual('Welcome to BookMonkey!');
   });
 });

@@ -7,7 +7,7 @@ describe('dpunkt.verlag', () => {
 
   it('should just call it Angular', () => {
     /*BS*/browser/*BE*/.get('http://dpunkt.de/buecher/12400/9783864903571-angular.html');
-    const heading = /*BS*/element/*BE*/(/*BS*/by/*BE*/.tagName('h3'));
+    const heading = /*BS*/element/*BE*/(/*BS*/by/*BE*/.tagName('h1'));
     expect(heading.getText()).toEqual('Angular');
   });
 
