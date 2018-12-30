@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CanNavigateToAdminGuard implements CanActivate {
   
-  accessGranted = false; 
+  accessGranted = false;
 
   canActivate(
     next: ActivatedRouteSnapshot,
