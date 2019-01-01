@@ -4,21 +4,29 @@
   <div class="ui divider"></div>
   <div class="ui grid">
     <div class="four wide column">
-      <h4>Autoren</h4>
+      <h4 i18n="@@BookDetailsComponent:book authors">
+        Autoren
+      </h4>
       <ng-container *ngFor="let author of book.authors">
         {{ author }}<br/>
       </ng-container>
     </div>
     <div class="four wide column">
-      <h4>ISBN</h4>
+      <h4 i18n="@@BookDetailsComponent:book isbn">
+        ISBN
+      </h4>
       {{ book.isbn | isbn:true }}
     </div>
     <div class="four wide column">
-      <h4>Erschienen</h4>
+      <h4 i18n="@@BookDetailsComponent:book published date">
+        Erschienen
+      </h4>
       {{ book.published | date:'longDate' }}
     </div>
     <div class="four wide column">
-      <h4>Rating</h4>
+      <h4 i18n="@@BookDetailsComponent:book rating">
+        Rating
+      </h4>
       <ng-container
         *ngFor="let r of getRating(book.rating);
                 index as i">
@@ -27,7 +35,9 @@
       </ng-container>
     </div>
   </div>
-  <h4>Beschreibung</h4>
+  <h4 i18n="@@BookDetailsComponent:book description">
+    Beschreibung
+  </h4>
   <p>{{ book.description }}</p>
   <div class="ui small images">
     <img *ngFor="let thumbnail of book.thumbnails"
@@ -35,11 +45,17 @@
   </div>
   <button class="ui tiny red labeled icon button"
           (click)="removeBook()">
-    <i class="remove icon"></i> Buch löschen
+    <i class="remove icon"></i>
+    <ng-container i18n="@@BookDetailsComponent:book delete">
+      Buch löschen
+    </ng-container>
   </button>
   <a class="ui tiny yellow labeled icon button"
     [routerLink]="['../../admin/edit', book.isbn]">
-    <i class="write icon"></i> Buch bearbeiten
+    <i class="write icon"></i>
+    <ng-container i18n="@@BookDetailsComponent:book edit">
+      Buch bearbeiten
+    </ng-container>
   </a>
 </div>
 
