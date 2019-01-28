@@ -1,4 +1,4 @@
-import { browser, element, by, $ } from 'protractor';
+/*BS*/import { browser, element, by, $ } from 'protractor';/*BE*/
 
 const html = `
   <h1 id="myId" class="myClass">Heading</h1>
@@ -9,7 +9,7 @@ const html = `
 describe('protractor locators', () => {
 
   beforeAll(() => {
-    browser.ignoreSynchronization = true;
+    browser.waitForAngularEnabled(false);
     browser.get('data:text/html,' + encodeURIComponent(html));
   });
 
@@ -38,6 +38,6 @@ describe('protractor locators', () => {
     expect(/*BS*/$/*BE*/(/*BS*/'#myId'/*BE*/).getText()).toBe('Heading');
   });
 
-  afterAll(() => browser.ignoreSynchronization = false);
+  afterAll(() => browser.waitForAngularEnabled(true);
 });
 
