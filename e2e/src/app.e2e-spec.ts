@@ -1,6 +1,6 @@
 import { BookMonkeyPage } from './app.po';
 
-describe('book-monkey App', function() {
+describe('book-monkey App', () => {
   let page: BookMonkeyPage;
 
   beforeEach(() => {

@@ -23,7 +23,7 @@ export class /*BS*/BookListPage/*BE*/ {
   }
 
   clickOnFirstBook() {
-    this.getBookItems().then(console.log)
+    this.getBookItems().then(console.log);
     this.getBookItems().first().click();
     return new BookDetailsPage();
   }

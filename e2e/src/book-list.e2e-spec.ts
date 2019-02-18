@@ -3,7 +3,7 @@
 
 import { BookListPage } from './book-list.po';
 
-describe('Book List Page', function() {
+describe('Book List Page', () => {
   let listPage: BookListPage;
 
   beforeEach(() => listPage = new BookListPage());
@@ -15,7 +15,7 @@ describe('Book List Page', function() {
 
   it('should navigate to details page by ISBN', () => {/*BS*/
     const detailsPage = listPage.navigateTo().clickOnFirstBook();/*BE*/
-    expect(detailsPage.getUrl()).toContain('/books/9783864903571');
+    expect(detailsPage.getUrl()).toContain('/books/9783864906466');
     expect(detailsPage.getHeaderText()).toBe('Angular');
   });
 });

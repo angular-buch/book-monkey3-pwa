@@ -38,6 +38,6 @@ describe('protractor locators', () => {
     expect(/*BS*/$/*BE*/(/*BS*/'#myId'/*BE*/).getText()).toBe('Heading');
   });
 
-  afterAll(() => browser.waitForAngularEnabled(true);
+  afterAll(() => browser.waitForAngularEnabled(true));
 });
 
