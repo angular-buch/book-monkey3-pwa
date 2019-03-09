@@ -29,8 +29,10 @@ describe('protractor locators', () => {
   });
 
   it('should select via various other ways', () => {
-    expect(element(by.cssContainingText('h1', 'Another Heading')).getText()).toBe('Another Heading with child');
-    expect(element(by.css('h1 span')).getText()).toBe('with child');
+    expect(element(by.cssContainingText('h1', 'Another Heading')).getText())
+      .toBe('Another Heading with child');
+    expect(element(by.css('h1 span'))
+      .getText()).toBe('with child');
   });
 
   it('should select via the /*BS*/$-shorthand/*BE*/', () => {
