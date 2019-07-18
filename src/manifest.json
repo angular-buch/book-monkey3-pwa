@@ -1,7 +1,7 @@
 {
-  "name": "BookMonkey",
+  "name": "BookMonkey 3 PWA",
   "short_name": "BookMonkey",
-  "theme_color": "#1976d2",
+  "theme_color": "#db2828",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
