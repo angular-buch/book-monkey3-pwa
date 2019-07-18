@@ -1,6 +1,10 @@
 {
   "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
+  "appData": {
+    "version": "2.0.0",
+    "changelog": "Caching bereits abgerufener Bücher."
+  },
   "assetGroups": [
     {
       "name": "app",
@@ -22,6 +26,22 @@
           "/assets/**",
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "Books",
+      "urls": [
+        "/secure/books",
+        "/secure/books/search/**",
+        "/secure/book/**"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 50,
+        "maxAge": "1d2h",
+        "timeout": "2s"
       }
     }
   ]
