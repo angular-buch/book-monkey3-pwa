@@ -20,7 +20,8 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.json"
             ],
             "styles": [
               "node_modules/semantic-ui-css/semantic.css",
@@ -52,9 +53,10 @@
                   "maximumError": "5mb"
                 }
               ],
-              "i18nLocale": "de"
+              "i18nLocale": "de",
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json"
             },
-
             "production-en": {
               "fileReplacements": [
                 {
@@ -113,10 +115,11 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.json"
             ],
             "styles": [
-	      "node_modules/semantic-ui-css/semantic.css",
+              "node_modules/semantic-ui-css/semantic.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -134,7 +137,7 @@
               "**/node_modules/**"
             ]
           }
-    },
+        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
@@ -148,6 +151,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "BookMonkey"
 }
