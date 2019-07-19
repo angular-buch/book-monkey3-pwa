@@ -1,17 +1,20 @@
 # BookMonkey3 PWA
 
 This project is based on the [BookMonkey3 (iteration7, i18n)](https://github.com/book-monkey3/iteration-7-i18n).
+It features a Progressive Web App (PWA) using the `@angular/pwa` package.
 
 ## Build and serve the PWA
 
 To build the PWA, run the build in production mode: `ng build --prod`. After that you can serve the production ready app using the `angular-http-server`:
 
 ```bash
-npm i -g angular-http-server
-angular-http-server --path=dist/BookMonkey
+npx angular-http-server --path=dist/BookMonkey
 ```
 
-> Please be aware to use icognito tabs during development for testing the PWA, to be sure that you won't see cached data when changing the PWA's behaviour and loading the app in the browser.
+`angular-http-server` provides a simple web server, such as `http-server`.
+The key difference is that all unknown paths will automatically be resolved to `index.html` so we can start the application with any dynmic route we want.
+
+> Please be aware to use icognito tabs during development for testing the PWA. This is necessary to be sure that you won't see cached data when changing the PWA's behaviour and loading the app in the browser.
 
 You can use the Chrome Developer Tools to simulate an offline behaviour.
 
