@@ -1,6 +1,22 @@
-# BookMonkey
+# BookMonkey3 PWA
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0.
+This project is based on the [BookMonkey3 (iteration7, i18n)](https://github.com/book-monkey3/iteration-7-i18n).
+
+## Build and serve the PWA
+
+To build the PWA, run the build in production mode: `ng build --prod`. After that you can serve the production ready app using the `angular-http-server`:
+
+```bash
+npm i -g angular-http-server
+angular-http-server --path=dist/BookMonkey
+```
+
+> Please be aware to use icognito tabs during development for testing the PWA, to be sure that you won't see cached data when changing the PWA's behaviour and loading the app in the browser.
+
+You can use the Chrome Developer Tools to simulate an offline behaviour.
+
+![Screenshot BookMonkey PWA, activate offline mode in Google Chrome Developer Tools](assets/bm-pwa-offline.png)
+
 
 ## Development server
 
