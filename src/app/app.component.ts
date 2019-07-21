@@ -1,14 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 
+import { WebNotificationService } from './shared/web-notification.service';
+
 @Component({
   selector: 'bm-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  isEnabled = false;
+  permission = Notification.permission;
 
-  constructor(private swUpdate: SwUpdate) {}
+  constructor(
+    private swUpdate: SwUpdate,
+    private webNotificationService: WebNotificationService
+  ) {}
 
   ngOnInit() {
     if (this.swUpdate.isEnabled) {
@@ -21,5 +28,11 @@ export class AppComponent implements OnInit {
         if (updateApp) { window.location.reload(); }
       });
     }
+    this.isEnabled = this.webNotificationService.isEnabled;
+  }
+
+  submitNotification() {
+    this.webNotificationService.subscribeToNotifications()
+      .then(() => this.permission = Notification.permission);
   }
 }
