@@ -9,8 +9,7 @@ import { WebNotificationService } from './shared/web-notification.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  isEnabled = false;
-  permission = Notification.permission;
+  permission: NotificationPermission | null = null;
 
   constructor(
     private swUpdate: SwUpdate,
@@ -28,7 +27,7 @@ export class AppComponent implements OnInit {
         if (updateApp) { window.location.reload(); }
       });
     }
-    this.isEnabled = this.webNotificationService.isEnabled;
+    this.permission = this.webNotificationService.isEnabled ? Notification.permission : null;
   }
 
   submitNotification() {
