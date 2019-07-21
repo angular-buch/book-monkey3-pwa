@@ -7,10 +7,10 @@
       <div class="ui button"
         (click)="submitNotification()"
         [ngClass]="{
-          'disabled': !isEnabled,
-          'default':  isEnabled && permission === 'default',
-          'positive': isEnabled && permission === 'granted',
-          'negative': isEnabled && permission === 'denied'
+          'disabled': !permission,
+          'default':  permission === 'default',
+          'positive': permission === 'granted',
+          'negative': permission === 'denied'
         }"
       >🔔</div>
     </div>
