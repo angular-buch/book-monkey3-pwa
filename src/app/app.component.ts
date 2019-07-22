@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
     this.permission = this.webNotificationService.isEnabled ? Notification.permission : null;
   }
 
-  submitNotification() {
+  subscribeToNotifications() {
     this.webNotificationService.subscribeToNotifications()
       .then(() => this.permission = Notification.permission);
   }
