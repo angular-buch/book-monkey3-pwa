@@ -38,7 +38,7 @@ jobs:
       - attach_workspace:
           at: /home/circleci/project
       - run: npm i --silent angular-cli-ghpages@0.5.3
-      - run: npx angular-cli-ghpages --repo "$GITHUB_ORG/$NAME.git" --name "$GITHUB_NAME" --email "$GITHUB_EMAIL" --cname "$CNAME" --dist "dist/BookMonkey"
+      - run: npx angular-cli-ghpages --repo "$GITHUB_ORG/$NAME.git" --name "$GITHUB_NAME" --email "$GITHUB_EMAIL" --cname "$CNAME" --dir "dist/BookMonkey"
 
 
 workflows:
