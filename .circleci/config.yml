@@ -16,7 +16,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
-      - run: ng build --prod
+      - run: npm run ng -- build --prod
       - persist_to_workspace:
           # 'project' is the default working_directory
           root: /home/circleci/project
@@ -38,7 +38,7 @@ jobs:
       - attach_workspace:
           at: /home/circleci/project
       - run: npm i --silent angular-cli-ghpages@0.5.3
-      - run: npx ngh --repo "$GITHUB_ORG/$NAME.git" --name "$GITHUB_NAME" --email "$GITHUB_EMAIL" --cname "$CNAME" --dist "dist/BookMonkey"
+      - run: npx angular-cli-ghpages --repo "$GITHUB_ORG/$NAME.git" --name "$GITHUB_NAME" --email "$GITHUB_EMAIL" --cname "$CNAME" --dist "dist/BookMonkey"
 
 
 workflows:
