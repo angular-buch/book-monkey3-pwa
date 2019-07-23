@@ -55,3 +55,4 @@ workflows:
             branches:
               only:
                 - release
+
