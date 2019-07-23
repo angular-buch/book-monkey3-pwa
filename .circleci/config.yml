@@ -16,7 +16,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
-      - run: npm run prerelease
+      - run: ng build --prod
       - persist_to_workspace:
           # 'project' is the default working_directory
           root: /home/circleci/project
@@ -25,19 +25,20 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/node:10-browsers
+      - image: circleci/node:12-browsers
 
     environment:
-      GITHUB_ORG: https://GH_TOKEN@github.com/angular-schule
+      GITHUB_ORG: https://GH_TOKEN@github.com/book-monkey3
       GITHUB_NAME: The Buildbot
       GITHUB_EMAIL: buildbot@angular2buch.de
-      NAME: angular-buch-website-build
+      NAME: book-monkey3-pwa-build
+      CNAME: bm3-pwa.angular-buch.com
 
     steps:
       - attach_workspace:
           at: /home/circleci/project
-      - run: npm i --silent angular-cli-ghpages@0.5.2
-      - run: npx ngh --repo "$GITHUB_ORG/$NAME.git" --name "$GITHUB_NAME" --email "$GITHUB_EMAIL" --branch master
+      - run: npm i --silent angular-cli-ghpages@0.5.3
+      - run: npx ngh --repo "$GITHUB_ORG/$NAME.git" --name "$GITHUB_NAME" --email "$GITHUB_EMAIL" --cname "$CNAME" --dist "dist/BookMonkey"
 
 
 workflows:
