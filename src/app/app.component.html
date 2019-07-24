@@ -7,7 +7,6 @@
       <div class="ui button"
         (click)="subscribeToNotifications()"
         [ngClass]="{
-          'disabled': !permission,
           'default':  permission === 'default',
           'positive': permission === 'granted',
           'negative': permission === 'denied'
@@ -16,4 +15,7 @@
     </div>
   </div>
 </div>
+
+{{ permission }}
+
 <router-outlet></router-outlet>
