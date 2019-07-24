@@ -27,11 +27,11 @@ export class AppComponent implements OnInit {
         if (updateApp) { window.location.reload(); }
       });
     }
-    this.permission = this.webNotificationService.isEnabled ? Notification.permission : null;
+    this.permission = this.webNotificationService.isEnabled ? Notification.permission || 'default' : null;
   }
 
   subscribeToNotifications() {
     this.webNotificationService.subscribeToNotifications()
-      .then(() => this.permission = Notification.permission);
+      .then(() => this.permission = Notification.permission || 'default');
   }
 }
